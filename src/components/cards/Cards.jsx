@@ -124,7 +124,6 @@ const Cards = () => {
   };
 
   const handleCardUpdatedAndCloseForm = (updatedCard) => {
-    // Обновление карточки в состоянии
     setCards((prevCards) =>
       prevCards.map((card) =>
         card._id === updatedCard._id ? updatedCard : card
