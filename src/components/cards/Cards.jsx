@@ -111,9 +111,12 @@ const Cards = () => {
     }
   };
 
-  const handleCardUpdated = (card) => {
-    if (role === "admin" || (role === "business" && card.user_id === userId)) {
-      setCurrentCard(card);
+  const handleCardUpdated = (updatedCard) => {
+    if (
+      role === "admin" ||
+      (role === "business" && updatedCard.user_id === userId)
+    ) {
+      setCurrentCard(updatedCard);
       setFormOpen(true);
     } else {
       showAlert("error", "You do not have permission to update this card.");
@@ -121,7 +124,12 @@ const Cards = () => {
   };
 
   const handleCardUpdatedAndCloseForm = (updatedCard) => {
-    handleCardUpdated(updatedCard);
+    setCards((prevCards) =>
+      prevCards.map((card) =>
+        card._id === updatedCard._id ? updatedCard : card
+      )
+    );
+    showAlert("success", "Card updated successfully!");
     setFormOpen(false);
   };
 

@@ -17,7 +17,7 @@
 Follow these steps to set up and run the project:
 
 1. **Clone the repository:**
-   Use Git to clone the repository to your local machine:git clone https://example.com/business-cards.git
+   Use Git to clone the repository to your local machine:git clone https://github.com/MarinaPanchenko12345/business-cards.git
    Navigate to the project directory:cd business-cards
 
    2. **Install dependencies:**
