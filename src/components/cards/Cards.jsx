@@ -149,6 +149,7 @@ const Cards = () => {
                 src={card.image.url}
                 alt={card.title}
                 onClick={() => handleCardClick(card)}
+                loading='lazy'
               />
             </div>
             <div className='card_text'>
