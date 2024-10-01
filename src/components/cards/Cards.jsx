@@ -142,13 +142,15 @@ const Cards = () => {
   return (
     <div className='home_container'>
       <div className='card_container'>
-        {filteredCards.slice(-6).map((card) => (
+        {filteredCards.slice(0, 12).map((card) => (
           <div key={card._id} className='card_item' style={style}>
-            <img
-              src={card.image.url}
-              alt={card.title}
-              onClick={() => handleCardClick(card)}
-            />
+            <div className='img_div'>
+              <img
+                src={card.image.url}
+                alt={card.title}
+                onClick={() => handleCardClick(card)}
+              />
+            </div>
             <div className='card_text'>
               <h3>{card.title}</h3>
               <h5>{card.subtitle}</h5>
