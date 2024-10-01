@@ -36,11 +36,6 @@ const Cards = () => {
       apiCard(METHOD.GET_ALL_CARDS);
     }
   }, [apiCard]);
-  useEffect(() => {
-    if (!isLoading && filteredCards.length > 0) {
-      // Возможно, нужно вызвать принудительное обновление
-    }
-  }, [filteredCards, isLoading]);
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
@@ -154,7 +149,6 @@ const Cards = () => {
                 src={card.image.url}
                 alt={card.title}
                 onClick={() => handleCardClick(card)}
-                loading='lazy'
               />
             </div>
             <div className='card_text'>
