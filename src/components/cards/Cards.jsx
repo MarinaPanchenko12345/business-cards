@@ -36,6 +36,11 @@ const Cards = () => {
       apiCard(METHOD.GET_ALL_CARDS);
     }
   }, [apiCard]);
+  useEffect(() => {
+    if (!isLoading && filteredCards.length > 0) {
+      // Возможно, нужно вызвать принудительное обновление
+    }
+  }, [filteredCards, isLoading]);
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
